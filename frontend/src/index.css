@@ -1,14 +1,185 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* Custom girly, bold, and cute styles */
+:root {
+  --pink-gradient: linear-gradient(135deg, #ff6b9d, #ffa8cc);
+  --purple-gradient: linear-gradient(135deg, #a855f7, #ec4899);
+  --coral-gradient: linear-gradient(135deg, #ff7eb3, #ff758c);
+  --pastel-gradient: linear-gradient(135deg, #ffd6e8, #e8f4ff);
+  --bold-pink: #ff1493;
+  --soft-pink: #ffd6e8;
+  --bold-purple: #8b5cf6;
+  --cute-coral: #ff6b9d;
+  --girly-blue: #87ceeb;
+}
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
         "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(135deg, #fef7ff 0%, #fdf2f8 50%, #fef3f2 100%);
+    min-height: 100vh;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-pink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+/* Cute floating elements */
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+.pulse-pink {
+  animation: pulse-pink 2s ease-in-out infinite;
+}
+
+/* Custom gradient backgrounds */
+.bg-pink-gradient {
+  background: var(--pink-gradient);
+}
+
+.bg-purple-gradient {
+  background: var(--purple-gradient);
+}
+
+.bg-coral-gradient {
+  background: var(--coral-gradient);
+}
+
+.bg-pastel-gradient {
+  background: var(--pastel-gradient);
+}
+
+/* Cute button styles */
+.btn-girly {
+  background: linear-gradient(135deg, #ff6b9d, #ffa8cc);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+}
+
+.btn-girly:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+  background: linear-gradient(135deg, #ff5a8a, #ff97b7);
+}
+
+.btn-outline-girly {
+  background: transparent;
+  color: #ff6b9d;
+  border: 2px solid #ff6b9d;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-girly:hover {
+  background: #ff6b9d;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 157, 0.3);
+}
+
+/* Cute card styles */
+.card-girly {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 30px rgba(255, 107, 157, 0.1);
+  border: 2px solid #ffd6e8;
+  transition: all 0.3s ease;
+}
+
+.card-girly:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 107, 157, 0.2);
+  border-color: #ff6b9d;
+}
+
+/* Cute text styles */
+.text-gradient-pink {
+  background: linear-gradient(135deg, #ff6b9d, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+/* Cute icons */
+.icon-girly {
+  color: #ff6b9d;
+  filter: drop-shadow(0 2px 4px rgba(255, 107, 157, 0.3));
+}
+
+/* Cute decorative elements */
+.decorative-blob {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b9d, #ffa8cc);
+  opacity: 0.1;
+  animation: float 4s ease-in-out infinite;
+}
+
+.decorative-blob.blob-1 {
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  right: 10%;
+  animation-delay: 0s;
+}
+
+.decorative-blob.blob-2 {
+  width: 60px;
+  height: 60px;
+  top: 70%;
+  left: 5%;
+  animation-delay: 1s;
+}
+
+.decorative-blob.blob-3 {
+  width: 80px;
+  height: 80px;
+  top: 40%;
+  right: 20%;
+  animation-delay: 2s;
 }
 
 code {
